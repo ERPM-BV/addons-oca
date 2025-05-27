@@ -5,11 +5,15 @@
         <field name="inherit_id" ref="account.view_move_line_tree" />
         <field name="mode">extension</field>
         <field name="arch" type="xml">
-            <xpath expr="//tree" position="inside">
+            <xpath expr="//list" position="inside">
                 <field
                     name="preview_attachment_id"
-                    string="Preview"
+                    string="preview_attachment_id"
                     widget="move_line_attachment_preview_widget"
+                />
+                <field
+                    name="attachment_ids"
+                    string="attachment_ids"
                 />
             </xpath>
         </field>
