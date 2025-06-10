@@ -10,7 +10,10 @@
     "category": "Accounting/Accounting",
     "development_status": "Alpha",
     "license": "AGPL-3",
-    "depends": ["account", "attachment_preview"],
+    "depends": [
+        "account",
+        # "attachment_preview",
+    ],
     "data": [
         "views/account_move_line.xml",
     ],

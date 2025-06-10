@@ -7,11 +7,19 @@ from odoo import fields, models
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
+    # TODO: clean this up?
+
     preview_attachment_id = fields.Many2one(
         string="Main Attachment",
         comodel_name="ir.attachment",
         related="move_id.message_main_attachment_id",
     )
-    attachment_ids = fields.One2many(
-        comodel_name="ir.attachment", related="move_id.attachment_ids"
+    
+    main_attachment_id = fields.Integer(
+        string="ir.attachment id of the main attachment",
+        related="preview_attachment_id.id",
+    )
+    main_attachment_mimetype = fields.Char(
+        string="mimetype of the main attachment",
+        related="preview_attachment_id.mimetype",
     )

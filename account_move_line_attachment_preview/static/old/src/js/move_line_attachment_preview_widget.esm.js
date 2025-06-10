@@ -1,5 +1,6 @@
 /** @odoo-module **/
 import {registry} from "@web/core/registry";
+//FIXME: missing web.rpc
 import {query} from "web.rpc";
 import {canPreview, getUrl, showPreview} from "@attachment_preview/js/utils.esm";
 import {sprintf} from "@web/core/utils/strings";
@@ -8,8 +9,11 @@ import {SIZES} from "@web/core/ui/ui_service";
 
 const {Component} = owl;
 
+console.log("move_line_attachment_preview_widget.esm.js")
+
 class MoveLineAttachmentWidget extends Component {
     setup() {
+        console.log("MoveLineAttachmentWidget.setup")
         super.setup();
         const ui = useService("ui");
         // Preview on new tab instead of widget in case the monitor is not big enough
@@ -17,6 +21,7 @@ class MoveLineAttachmentWidget extends Component {
     }
 
     async openAttachment() {
+        console.log("MoveLineAttachmentWidget.openAttachment")
         var attachment_id = this.props.record.data.preview_attachment_id[0];
         const filename = this.props.record.data.preview_attachment_id[1];
         const split_screen = this.split_screen;

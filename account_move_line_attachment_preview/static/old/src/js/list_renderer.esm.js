@@ -2,6 +2,7 @@
 import {onMounted} from "@odoo/owl";
 import {AttachmentPreviewWidget} from "@attachment_preview/js/attachmentPreviewWidget.esm";
 import {ListRenderer} from "@web/views/list/list_renderer";
+//FIXME: missing web.core
 import {bus} from "web.core";
 import {patch} from "@web/core/utils/patch";
 

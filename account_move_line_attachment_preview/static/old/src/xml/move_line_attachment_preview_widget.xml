@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- this did something in 16 but doesn't seem to do anything in 18 as removing this file changes nothing... -->
 <templates>
 
     <t t-name="account_move_line_attachment_preview.MoveLineAttachmentWidget" owl="1">
