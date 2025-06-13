@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="move_line_attachment_preview.AddIFrame">
+        <!-- class="attachment_preview_iframe_hidden" -->
+        <iframe  src="about:blank" name="preview-iframe" t-ref="iframe"
+        t-on-load="onIFrameLoaded" t-att-class="{'attachment_preview_iframe': this.iFrameEnabled.active, 'attachment_preview_iframe_hidden': !this.iFrameEnabled.active}" />
+    </t>
+
+    <t t-name="move_line_attachment_preview.MoveLineListView" t-inherit="web.ListView">
+        <xpath expr="//div[@t-ref='root']" position="attributes" type="add">
+            <attribute name="class" add="attachment_preview_test_class" separator=" "/>
+        </xpath>
+        <xpath expr="//Layout" position="inside">
+            <t t-call="move_line_attachment_preview.AddIFrame"/>
+        </xpath>
+    </t>
+</templates>

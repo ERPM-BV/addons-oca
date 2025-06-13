@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
+
+
+    <!-- <t t-name="move_line_attachment_preview.TestCallTemplate">
+        <p>TEST CALL TEMPLATE</p>
+    </t> -->
+
     <t t-name="move_line_attachment_preview.PdfPreviewField">
-        <t t-if="props.record.data.main_attachment_mimetype =='application/pdf'">
-            <!-- <iframe class="o_pdfview_iframe"
-                alt="PDF file"
-                t-att-src="preview_url"
-                t-att-name="props.name"
-                t-on-error="onLoadFailed"
-            /> -->
+
+        <!-- pdf viewer specific -->
+        <!-- <t t-if="props.record.data.main_attachment_mimetype =='application/pdf'">
             <a t-att-href="preview_url" target="_blank">pdf_viewer</a>
-        </t>
+        </t> -->
+
+        <!-- try to add iframe to list view... -->
+        <!-- why broken? -->
+        <!-- <t t-call="move_line_attachment_preview.MoveLineListView" /> -->
+
+        <!-- <t t-call="move_line_attachment_preview.TestCallTemplate" /> -->
+
+        <!-- generic, using browsers built in viewer -->
         <t t-if="props.record.data[props.name]">
-            <!-- props.name is the name of the field, so if props.record.data[props.name], that is the ir.attachment id of the attachment, and it exists... -->
-            <a t-att-href="file_url" target="_blank">direct link</a>
-            <!-- TODO: use attachment name as clickable -->
+            <!-- props.name is the name of the field, so if props.record.data[props.name], that is
+            the ir.attachment id of the attachment, and it exists... -->
+            <!-- <p><a t-att-href="file_url" target="_blank">direct link</a></p> -->
+            <p><a t-att-href="file_url" target="preview-iframe">try iframe</a></p>
         </t>
         <t t-else="">
             <p> - - - </p>
         </t>
     </t>
+
+
 
 </templates>

@@ -84,21 +84,10 @@ export class PdfPreviewField extends Component {
     return direct_link
   }
 
-  // update({ data }) {
-  //   const changes = { [this.props.name]: data || false };
-  //   return this.props.record.update(changes);
-  // }
-
-  // onFileRemove() {
-  //   this.state.isValid = true;
-  //   this.update({});
-  // }
-
-  // onFileUploaded({ data, objectUrl }) {
-  //   this.state.isValid = true;
-  //   this.state.objectUrl = objectUrl;
-  //   this.update({ data });
-  // }
+  onClick() {
+    console.log(`ONCLICK CLICKED`)
+    // open attachment in side bar thing
+  }
 
   onLoadFailed() {
     console.log("PdfPreviewField.onLoadFailed")
@@ -111,18 +100,6 @@ export class PdfPreviewField extends Component {
 
 export const pdfPreviewField = {
   component: PdfPreviewField,
-  /*
-  displayName: _t("PDF Preview"),
-  supportedOptions: [
-    {
-      label: _t("Preview image"),
-      name: "preview_image",
-      type: "field",
-      availableTypes: ["binary"],
-    },
-  ],
-  supportedTypes: ["binary"],
-  */
 };
 
 registry.category("fields").add("move_line_attachment_preview_widget", pdfPreviewField);

@@ -6,11 +6,14 @@
         <field name="mode">extension</field>
         <field name="arch" type="xml">
             <xpath expr="//list" position="inside">
-                <field name="id" />
+                <!-- <field name="id" />
                 <field name="preview_attachment_id" />
                 <field name="main_attachment_id" string="main_attachment_id" />
-                <field name="main_attachment_mimetype" string="main_attachment_mimetype" />
+                <field name="main_attachment_mimetype" string="main_attachment_mimetype" /> -->
                 <field name="main_attachment_id" string="main_attachment_id widget" widget="move_line_attachment_preview_widget" />
+            </xpath>
+            <xpath expr="//list" position="attributes" >
+                <attribute name="js_class">move_line_attachment_preview_list</attribute>
             </xpath>
         </field>
     </record>
