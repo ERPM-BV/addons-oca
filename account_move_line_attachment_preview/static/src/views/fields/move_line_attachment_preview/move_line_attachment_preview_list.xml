@@ -3,8 +3,8 @@
 
     <t t-name="move_line_attachment_preview.AddIFrame">
         <!-- class="attachment_preview_iframe_hidden" -->
-        <iframe  src="about:blank" name="preview-iframe" t-ref="iframe"
-        t-on-load="onIFrameLoaded" t-att-class="{'attachment_preview_iframe': this.iFrameEnabled.active, 'attachment_preview_iframe_hidden': !this.iFrameEnabled.active}" />
+        <iframe  t-att-src="this.iFrameState.src" name="preview-iframe" t-ref="iframe"
+        t-on-load="onIFrameLoaded" t-att-class="{'attachment_preview_iframe': this.iFrameState.active, 'attachment_preview_iframe_hidden': !this.iFrameState.active}" />
     </t>
 
     <t t-name="move_line_attachment_preview.MoveLineListView" t-inherit="web.ListView">

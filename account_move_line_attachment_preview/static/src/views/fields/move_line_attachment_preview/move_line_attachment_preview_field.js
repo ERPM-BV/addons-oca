@@ -49,7 +49,7 @@ export class PdfPreviewField extends Component {
 
   get preview_url() {
     /* 
-    url for built-in pdf previewer and file
+    return url for built-in pdf viewer if pdf, else return direct link
     */
     if (/* filetype is pdf */this.props.record.data.main_attachment_mimetype === 'application/pdf') {
       console.log(`It's a PDF! returning url for viewer`)
@@ -62,7 +62,6 @@ export class PdfPreviewField extends Component {
       )
       if (file) { console.log(`file: ${file}`) }
       return `/web/static/lib/pdfjs/web/viewer.html?file=${file}`;
-      /* is there a point in using the viewer when browser has built-in viewer and we can just link the file directly? */
     } else {
       console.log("Not a PDF! returning url for file")
       const direct_link = url("/web/content", {
@@ -84,10 +83,10 @@ export class PdfPreviewField extends Component {
     return direct_link
   }
 
-  onClick() {
-    console.log(`ONCLICK CLICKED`)
-    // open attachment in side bar thing
-  }
+  // onClick() {
+  //   console.log(`ONCLICK CLICKED`)
+  //   // open attachment in side bar thing
+  // }
 
   onLoadFailed() {
     console.log("PdfPreviewField.onLoadFailed")
